@@ -80,9 +80,9 @@ wc_avg <- data.frame(Year = wc_avg[,1], mean = rowMeans(wc_avg[,-1], na.rm = TRU
 colnames(wc_avg) <- c("Year", "WC")
 
 #combine averages into one data frame and tidy
-summary <- cbind(ps_avg, ct_avg, wc_avg) %>% #combine columns
-  subset(select = c("Year", "PS", "CT", "WC")) %>% #take out repeated course_sample column
-  gather(learning_outcome, mean, PS:WC, na.rm = TRUE) #tidy
+summary <- cbind(ct_avg, wc_avg) %>% #combine columns but not problem solving
+  subset(select = c("Year", "CT", "WC")) %>% #take out repeated course_sample column
+  gather(learning_outcome, mean, CT:WC, na.rm = TRUE) #tidy
 
 
 # x axis labels with sample sizes
