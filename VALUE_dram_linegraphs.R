@@ -2,35 +2,35 @@
 # drama VALUE line graph
 source("set_up.R")
 
-# choose VALUE criteria:
+# choose VALUE criteria ----------------------------
 
 learning = ps
 legend = c("Define Problem", "Identify Strategies", "Propose Solutions", "Evaluate Potential Solutions", "Implement Solutions", "Evaluate Outcomes")
-col = rev(brewer.pal(8,"Oranges"))
+col = rev(brewer.pal(8,"Greens"))
 shape_vals = c(0,1,2,15,16,17) #values for scale_shape_manual
 graph_title = "Problem Solving"
 
 learning = ct
 legend = c("Explanation of Issues", "Evidence", "Influence of Context and Assumptions", "Student's Position", "Conclusions") 
-col = rev(brewer.pal(7,"Greens")) #colour for scale_colour_manual
+col = rev(brewer.pal(7,"Blues")) #colour for scale_colour_manual
 line_vals = c(5,4,3,2,1) #values for linetype
 shape_vals = c(0,1,2,15,16) #values for scale_shape_manual
 graph_title = "Critical Thinking"
 
 learning = wc  
 legend = c("Context and Purpose for Writing", "Content Development", "Genre and Disciplinary Conventions", "Sources and Evidence", "Syntax and Mechanics") 
-col = rev(brewer.pal(7,"Blues"))
+col = rev(brewer.pal(7,"Oranges"))
 shape_vals = c(0,1,2,15,16) #values for scale_shape_manual
 graph_title = "Written Communication"
 
 learning = summary #summary of the 3 outcomes  
 legend = c("Critical Thinking", "Written Communication")
-col = c( "#33CC44", "#3388EE")
+col = c( "#3388EE", "#FF8833")
 shape_vals = c(16, 17) #values for scale_shape_manual
 graph_title = "Learning Outcomes"
 
 
-# plot:
+# CREATE PLOT --------------------------------
 
 ggplot(
   data = learning, 
